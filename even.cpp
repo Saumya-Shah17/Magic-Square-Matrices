@@ -1,0 +1,61 @@
+#include<stdio.h>
+
+int main()
+{
+    int n,a[50][50],i,j;
+    qq
+    printf("Enter n:");
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            a[i][j]=(i*n)+j+1;
+        }
+    }
+    for(i=0;i<n/4;i++)
+    {
+        for(j=0;j<n/4;j++)
+        {
+            a[i][j]=(n*n+1)-a[i][j];
+        }
+    }
+    for(i=0;i<n/4;i++)
+    {
+        for(j=3*n/4;j<n;j++)
+        {
+            a[i][j]=(n*n+1)-a[i][j];
+        }
+    }
+    for(i=3*n/4;i<n;i++)
+    {
+        for(j=0;j<n/4;j++)
+        {
+            a[i][j]=(n*n+1)-a[i][j];
+        }
+    }
+    for(i=3*n/4;i<n;i++)
+    {
+        for(j=3*n/4;j<n;j++)
+        {
+            a[i][j]=(n*n+1)-a[i][j];
+        }
+    }
+    for(i=n/4;i<3*n/4;i++)
+    {
+        for(j=n/4;j<3*n/4;j++)
+        {
+            a[i][j]=(n*n+1)-a[i][j];
+        }
+    }
+    printf("MSM:\n");
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            printf("%d\t",a[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
